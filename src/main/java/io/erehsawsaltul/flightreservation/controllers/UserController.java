@@ -27,6 +27,8 @@ public class UserController {
 
 			userDetails.addAttribute("firstName", user.getFirstName());
 			userDetails.addAttribute("lastName", user.getLastName());
+			userDetails.addAttribute("password", user.getPassword());
+			userDetails.addAttribute("confirmPassword", user.getConfirmPassword());
 
 			userDetails.addAttribute("emailError", "Invalid Email");
 			return showRegistrationPage();
@@ -56,6 +58,13 @@ public class UserController {
 			try {
 				userRepository.save(user);
 			} catch (Exception e) {
+				
+				userDetails.addAttribute("firstName", user.getFirstName());
+				userDetails.addAttribute("lastName", user.getLastName());
+				userDetails.addAttribute("firstName", user.getFirstName());
+				userDetails.addAttribute("password", user.getPassword());
+				userDetails.addAttribute("confirmPassword", user.getConfirmPassword());
+				
 				userDetails.addAttribute("error", e.getCause().getCause().getMessage());
 				return showRegistrationPage();
 				}
