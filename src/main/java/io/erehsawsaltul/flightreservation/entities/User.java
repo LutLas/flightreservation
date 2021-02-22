@@ -19,6 +19,9 @@ public class User extends AbstractEntity {
 	
 	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "confirmed_password")
+	private String confirmPassword;
 
 	public String getFirstName() {
 		return firstName;
@@ -50,5 +53,13 @@ public class User extends AbstractEntity {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 }

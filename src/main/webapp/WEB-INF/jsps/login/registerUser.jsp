@@ -8,16 +8,17 @@
 <title>User Registration</title>
 </head>
 <body>
-
+<h3>Sign Up</h3>
 <form action="registerUser" method="post">
 <pre>
-First Name: <input type="text" name="firstName"/>
-Last Name: <input type="text" name="lastName"/>
-Email Address: <input type="email" name="email"/>
-Password: <input type="password" name="password"/>
-Confirm Password: <input type="password" name="confirmPassword"/>
+First Name: <input type="text" name="firstName" value="${firstName}"/>
+Last Name: <input type="text" name="lastName" value="${lastName}"/>
+Email Address: <input type="email" name="email" value="${email}"/><font color="red">${emailError}</font> 
+Password: <input type="password" name="password" value="${password}"/><font color="red">${passwordError}</font> 
+Confirm Password: <input type="password" name="confirmPassword"/><font color="red">${passwordMissedError}</font> 
 <input type="submit" value="Register"/>
 </pre>
 </form>
+<font color="red">${error}</font> 
 </body>
 </html>
