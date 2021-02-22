@@ -76,7 +76,24 @@ public class UserController {
 			userDetails.addAttribute("password", "");
 			
 			return "login/logIn";
-		} 
-			
+		} 	
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String showLoginPage(@ModelAttribute("user") User user, ModelMap userDetails) {
+		User fetchedUser = userRepository.findByEmail(user.getEmail());
+		if(fetchedUser == null) {
+			userDetails.addAttribute("emailLoginError", "Email Not Found");
+			userDetails.addAttribute("email", user.getEmail());
+			return "login/logIn";
+		}
+		else if(fetchedUser.getPassword().equals(user.getPassword())) {
+			return "findFlights";
+		}else {
+			userDetails.addAttribute("passwordLoginError", "Incorrect Password");
+			userDetails.addAttribute("email", user.getEmail());
+		}
+		
+		return "login/logIn";
 	}
 }

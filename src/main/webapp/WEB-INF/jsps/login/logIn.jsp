@@ -11,8 +11,8 @@
 <h3>Log-In</h3>
 <form action="login" method="post">
 <pre>
-<input type="email" name="email"/>
-<input type="password" name="password"/>
+Email: <input type="email" name="email" value="${email}"/><font color="red">${emailLoginError}</font> 
+Password: <input type="password" name="password"/><font color="red">${passwordLoginError}</font> 
 <input type="submit" name="Log In"/>
 </pre>
 </form>
