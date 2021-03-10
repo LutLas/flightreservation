@@ -9,8 +9,13 @@
 </head>
 <body>
 <h3>Find Flights</h3>
-<form>
-
+<form action="findFlights" method="post">
+<pre>
+To: <input type="text" name="to"/>
+From: <input type="text" name="from"/>
+Departure Date: <input type="text" name="departureDate"/>
+<input type="submit" value="Search"/>
+</pre>
 </form>
 </body>
 </html>
