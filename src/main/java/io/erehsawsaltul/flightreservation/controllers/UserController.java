@@ -23,7 +23,7 @@ public class UserController {
 	
 	@RequestMapping("/showLogin")
 	public String showLoginPage() {
-		return "login/login";
+		return "login/logIn";
 	}
 
 

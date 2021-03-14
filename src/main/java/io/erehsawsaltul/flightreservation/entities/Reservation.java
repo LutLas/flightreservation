@@ -1,7 +1,5 @@
 package io.erehsawsaltul.flightreservation.entities;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -23,9 +21,6 @@ public class Reservation extends AbstractEntity {
 	@OneToOne
 	private Flight flight;
 	
-	@Column(name = "created")
-	private Timestamp created;
-
 	public Boolean getCheckedIn() {
 		return checkedIn;
 	}
@@ -56,13 +51,5 @@ public class Reservation extends AbstractEntity {
 
 	public void setFlight(Flight flight) {
 		this.flight = flight;
-	}
-
-	public Timestamp getCreated() {
-		return created;
-	}
-
-	public void setCreated(Timestamp created) {
-		this.created = created;
 	}
 }
